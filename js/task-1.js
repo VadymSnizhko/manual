@@ -1,4 +1,13 @@
-const getUserNames = (users) => users.map(item => item.name);
+const arrayList = ["математика", "фізика", "хімія", "математика", "укр.мова", "хімія"];
+
+const filterArray = arrayList.filter((items, index, arr) => {
+  
+  return arr.indexOf(items) === index;
+});
+
+console.log(filterArray);
+
+/*const getUserNames = (users) => users.map(item => item.name);
 console.log(
   getUserNames([
   {
@@ -37,4 +46,4 @@ console.log(
     balance: 2764
   },
 ])
-); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+);*/ // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
