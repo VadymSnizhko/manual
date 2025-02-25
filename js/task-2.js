@@ -1,64 +1,70 @@
-const getUsersWithFriend = (users, friendName) => {  
-  return users.filter((item) => 
-    item.friends.some(friend =>
-      friend.toLowerCase() === friendName.toLowerCase())
-  );
-};
-
-const allUsers = [
+const listAll = [
   {
     name: "Moore Hensley",
-    friends: ["Sharron Pace"]
+    email: "moorehensley@indexia.com",
+    eyeColor: "blue",
+    friends: ["Sharron Pace"],
+    isActive: false,
+    balance: 2811,
+    gender: "male"
   },
   {
     name: "Sharlene Bush",
-    friends: ["Briana Decker", "Sharron Pace"]
+    email: "sharlenebush@tubesys.com",
+    eyeColor: "blue",
+    friends: ["Briana Decker", "Sharron Pace"],
+    isActive: true,
+    balance: 3821,
+    gender: "female"
   },
   {
     name: "Ross Vazquez",
-    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"]
+    email: "rossvazquez@xinware.com",
+    eyeColor: "green",
+    friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+    isActive: false,
+    balance: 3793,
+    gender: "male"
   },
   {
     name: "Elma Head",
-    friends: ["Goldie Gentry", "Aisha Tran"]
+    email: "elmahead@omatom.com",
+    eyeColor: "green",
+    friends: ["Goldie Gentry", "Aisha Tran"],
+    isActive: true,
+    balance: 2278,
+    gender: "female"
   },
   {
     name: "Carey Barr",
-    friends: ["Jordan Sampson", "Eddie Strong"]
+    email: "careybarr@nurali.com",
+    eyeColor: "blue",
+    friends: ["Jordan Sampson", "Eddie Strong"],
+    isActive: true,
+    balance: 3951,
+    gender: "male"
   },
   {
     name: "Blackburn Dotson",
-    friends: ["Jacklyn Lucas", "Linda Chapman"]
+    email: "blackburndotson@furnigeer.com",
+    eyeColor: "brown",
+    friends: ["Jacklyn Lucas", "Linda Chapman"],
+    isActive: false,
+    balance: 1498,
+    gender: "male"
   },
   {
     name: "Sheree Anthony",
-    friends: ["Goldie Gentry", "Briana Decker"]
+    email: "shereeanthony@kog.com",
+    eyeColor: "brown",
+    friends: ["Goldie Gentry", "Briana Decker"],
+    isActive: true,
+    balance: 2764,
+    gender: "female"
   }
 ];
 
-console.log(getUsersWithFriend(allUsers, "Briana Decker")); 
-// [
-//   {
-//     name: "Sharlene Bush",
-//     friends: ["Briana Decker", "Sharron Pace"]
-//   },
-//   {
-//     name: "Sheree Anthony",
-//     friends: ["Goldie Gentry", "Briana Decker"]
-//   }
-// ]
+const getUsersWithEyeColor = (users, color) => users.filter(item => item.eyeColor == color);
+console.log(getUsersWithEyeColor(listAll,"brown"));
 
-console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
-// [
-//   {
-//     name: "Elma Head",
-//     friends: ["Goldie Gentry", "Aisha Tran"]
-//   },
-//   {
-//     name: "Sheree Anthony",
-//     friends: ["Goldie Gentry", "Briana Decker"]
-//   }
-// ]
-
-console.log(getUsersWithFriend(allUsers, "Adrian Cross" )); // []
 
