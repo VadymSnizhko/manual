@@ -1,47 +1,53 @@
-const getTotalBalanceByGender = (users, gender) => {
-  return users
-    .filter(user => user.gender === gender)  
-        .reduce((total, user) => total + user.balance, 0);     
+class Bloger {
+  constructor(obj) {
+    this.email = obj.email;
+    this.age = obj.age;
+    this.numberOfPost = obj.numberOfPost;
+    this.topics = obj.topics;
+  }
+  getInfo() {
+    
+  }
+  updatePostCount(value) {
+    this.numberOfPost += value;
+  }
 }
 
-const clients = [
-	{
-    name: "Moore Hensley",
-    gender: "male",
-    balance: 2811
-  },
-  {
-    name: "Sharlene Bush",
-    gender: "female",
-    balance: 3821
-  },
-  {
-    name: "Ross Vazquez",
-    gender: "male",
-    balance: 3793
-  },
-  {
-    name: "Elma Head",
-    gender: "female",
-    balance: 2278
-  },
-  {
-    name: "Carey Barr",
-    gender: "male",
-    balance: 3951
-  },
-  {
-    name: "Blackburn Dotson",
-    gender: "male",
-    balance: 1498
-  },
-  {
-    name: "Sheree Anthony",
-    gender: "female",
-    balance: 2764
+const alic = new Bloger({
+  email: "aa@r.com",
+  age: 25,
+  numberOfPost: 30,
+  topics: ["chiken","sport"]
+})
+
+class User{
+  #login;
+  #email;
+
+  constructor(login, email) {
+    this.#login = login;
+    this.#email = email;
   }
-];
 
-console.log(getTotalBalanceByGender(clients, "male")); // 12053
+  get getLogin() {
+    return this.#login;
+  }
 
-console.log(getTotalBalanceByGender(clients, "female")); // 8863
+  set login(newLogin) {
+    this.#login = newLogin;
+  }
+
+  getEmail() {
+    return this.#email;
+  }
+
+  setEmail(newEmail) {
+    this.#email = newEmail;
+  }
+}
+
+const toma = new User("Toma", "ww@kk.net");
+console.log(toma.getLogin);
+toma.login = "tome3"
+console.log(toma.getLogin);
+

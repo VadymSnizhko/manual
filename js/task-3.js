@@ -1,6 +1,7 @@
-function foo() {
-  console.log(this);
-  
-}
+class Hero {
+  constructor(obj = {}) {
+    this.name = obj.name;
+    this.xp = 
 
-foo();
+  }
+}
