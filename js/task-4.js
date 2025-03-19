@@ -1,4 +1,35 @@
-class Bloger {
+const text = document.querySelector(".inpt");
+/*text.addEventListener("input", (event) => {
+  console.log(event.target.value);
+});*/
+text.addEventListener("focus", (event) => {
+  console.log("focus");
+});
+text.addEventListener("blur",handleBlur);
+
+function handleBlur(event) {
+  const name = event.target.value;
+  alert(`Hello ${name}`);
+}
+
+const btn = document.querySelector(".btn");
+btn.addEventListener('click',handleClick);
+
+function handleClick() {
+  console.log("ok");  
+}
+
+document.addEventListener("keydown", hPress);
+
+function hPress(params) {
+  if (params.ctrlKey && params.code == "KeyC") {
+    console.log("Copy Error");
+    
+    params.preventDefault();
+  }
+}
+
+/*class Bloger {
   constructor(obj) {
     this.email = obj.email;
     this.age = obj.age;
@@ -50,4 +81,4 @@ const toma = new User("Toma", "ww@kk.net");
 console.log(toma.getLogin);
 toma.login = "tome3"
 console.log(toma.getLogin);
-
+*/
