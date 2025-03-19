@@ -61,6 +61,13 @@ const LS_KEY = 'basket';
 
 const container = document.querySelector('.js-list');
 
+const textBasket = document.querySelector('.text-basket');
+
+let countProducts;
+let count = 0;
+
+console.log(textBasket);
+
 container.insertAdjacentHTML('beforeend', createMrkup(instruments));
 
 container.addEventListener('click', addProducts);
@@ -100,6 +107,12 @@ function addProducts(event) {
     }
 
     localStorage.setItem(LS_KEY, JSON.stringify(products));
+
+    countProducts = JSON.parse(localStorage.getItem(LS_KEY))
+      .map(item => item.qty)
+      .reduce((sum, qty) => sum + qty, 0);
+    //console.log(countProducts);
+    textBasket.textContent = `Basket (${countProducts})`;
   } else {
     return;
   }

@@ -22,7 +22,7 @@ function totalCostCalc() {
   }
 
   totalPrice.textContent = totalCost
-    ? `Total cost ${totalCost}`
+    ? `Total cost ${totalCost} грн.`
     : 'Basket empty';
 }
 
@@ -34,7 +34,7 @@ tableProduct.insertAdjacentHTML(
   titleTable + createTable(products)
 );
 
-container.insertAdjacentHTML('beforeend', createMarkup(products));
+//container.insertAdjacentHTML('beforeend', createMarkup(products));
 
 function createTable(arr) {
   return arr
@@ -42,9 +42,9 @@ function createTable(arr) {
       ({ id, name, qty, price }) => `
     <tr>
         <td>${name}</td>
-        <td>${price}</td>
+        <td>${price},00 грн.</td>
         <td>${qty}</td>
-        <td>${qty * price}</td>
+        <td>${qty * price},00 грн.</td>
         <td><button class="button-del" data-id="${id}">X</button></td>
     </tr>
     `
