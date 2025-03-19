@@ -9,7 +9,7 @@ const instruments = [
   },
   {
     id: 3,
-    img: 'https://static.dnipro-m.ua/cache/products/992/catalog_origin_322784.jpg',
+    img: 'https://static.dnipro-m.ua/cache/products/1248/catalog_origin_491895.jpg',
     name: 'Шліфмашина',
     price: 1299,
     description:
