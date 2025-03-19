@@ -72,6 +72,10 @@ container.insertAdjacentHTML('beforeend', createMrkup(instruments));
 
 container.addEventListener('click', addProducts);
 
+countProducts = getCount();
+//console.log(countProducts);
+textBasket.textContent = `Basket (${countProducts})`;
+
 function createMrkup(list) {
   return list
     .map(
@@ -108,12 +112,16 @@ function addProducts(event) {
 
     localStorage.setItem(LS_KEY, JSON.stringify(products));
 
-    countProducts = JSON.parse(localStorage.getItem(LS_KEY))
-      .map(item => item.qty)
-      .reduce((sum, qty) => sum + qty, 0);
+    countProducts = getCount();
     //console.log(countProducts);
     textBasket.textContent = `Basket (${countProducts})`;
   } else {
     return;
   }
+}
+
+function getCount() {
+  return JSON.parse(localStorage.getItem(LS_KEY))
+    .map(item => item.qty)
+    .reduce((sum, qty) => sum + qty, 0);
 }
